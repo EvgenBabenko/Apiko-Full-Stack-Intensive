@@ -1,12 +1,10 @@
 import React from 'react'
 
-export default function PostListItem(props) {
-    const { id, title, body } = props;
-
+export default function PostListItem({ id, title, body }) {
     return (
-        <div id={id}>
-            <h2>{title}</h2>
-            <div>{body}</div>
+        <div id={id} className='post-item'>
+            <h3>{title}</h3>
+            <p>{body}</p>
         </div>
     )
 }

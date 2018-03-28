@@ -5,26 +5,32 @@ import data from '../data.json'
 import PostList from './PostList'
 import MoreButton from './MoreButton'
 
-export default class App extends Component {
+class App extends Component {
    state = {
-       countPost: 1,
-       dataPart: data.slice(0, 1)
+        counterPosts: 10,
    }
 
-    handleClickButton = () => {
+    getMorePosts = () => {
+        const { counterPosts } = this.state;
+
+        if (counterPosts >= data.length) return;
+
         this.setState({
-            countPost: this.state.countPost + 1,
-            dataPart: data.slice(0, this.state.countPost)
-        })
+            counterPosts: counterPosts + 10,
+         })
     }
-    
+
     render() {
-        console.log(this.state)
         return (
-            <div>
-                <PostList posts={this.state.dataPart}/>
-                <MoreButton onClickButton={this.handleClickButton}/>
-            </div>
+            <React.Fragment>
+                <PostList 
+                    posts={data.slice(0, this.state.counterPosts)}
+                    {...this.state}
+                />
+                <MoreButton onClickButton={this.getMorePosts}/>
+            </React.Fragment>
         )
     }
-}
+}               
+
+export default App;

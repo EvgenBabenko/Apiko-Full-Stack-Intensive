@@ -1,9 +1,7 @@
 import React from 'react'
 
-function MoreButton(props) {
+export default function MoreButton({ onClickButton }) {
     return (
-        <button onClick={props.onClickButton}>Show more...</button>
+        <button onClick={onClickButton}>Show more...</button>
     )
 }
-
-export default MoreButton

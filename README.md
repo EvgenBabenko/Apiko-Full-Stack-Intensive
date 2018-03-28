@@ -19,7 +19,7 @@ Builds the app for production to the build folder.
 To show the app for production, run static server, should be installed serve `npm install -g serve`
 
 ## `Technical requirements`
-1. Save Data from Endpoint to “data.json” file into your project.
+1. Save Data from [Endpoint](https://jsonplaceholder.typicode.com/posts) to “data.json” file into your project.
 2. Make components:
 - PostList - A list for all of you posts.
 - PostListItem - A post list item component.
