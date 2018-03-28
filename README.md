@@ -1,5 +1,5 @@
 # Apiko-Full-Stack-Intensive
-## `Lesson 3 - Components`
+## `Lesson 4 - React. Forms`
 
 ## `Instruction`
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -19,10 +19,7 @@ Builds the app for production to the build folder.
 To show the app for production, run static server, should be installed serve `npm install -g serve`
 
 ## `Technical requirements`
-1. Save Data from [Endpoint](https://jsonplaceholder.typicode.com/posts) to “data.json” file into your project.
-2. Make components:
-- PostList - A list for all of you posts.
-- PostListItem - A post list item component.
-- MoreButton - Button to be placed under the list.
-3. PostList should show 10 posts at first.
-4. MoreButton have to load 10 more post to your list.
+* Create “search” input conponent
+* Filter posts data by “title” accourding to entered text
+* PostList should show matched elements
+* In case when no items found you should show “No items found” message (Make component for this one)
