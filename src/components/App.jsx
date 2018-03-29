@@ -9,35 +9,26 @@ import Search from './Search'
 class App extends Component {
    state = {
         counterPosts: 10,
-        // filteredData: data.slice(0, 10),
         filteredData: data,
-
-        // dataPart: state.filteredData.slice(0, 10),
         searchValue: '',
    }
 
     getMorePosts = () => {
-        // const { counterPosts } = this.state;
+        const { counterPosts, filteredData } = this.state;
 
-        // if (counterPosts >= data.length) return;
-
-        // const counterPosts = this.state.counterPosts + 10;
+        if (counterPosts >= filteredData.length) return;
 
         this.setState({
-            counterPosts: this.state.counterPosts + 10,
-            // dataPart: this.state.counterPosts + 10
-         })
+            counterPosts: counterPosts + 10,
+        })
     }
 
     changeSearch = ({ target: { value } } ) => {
         console.log(value);
         const regExp = new RegExp(value, 'gi')
         let filteredData = data.filter(item => regExp.test(item.title))
-        // const len = filteredData.length;
 
-        if (!filteredData) {
-            filteredData = data;
-        }
+        if (!filteredData) filteredData = data;
 
         console.log(regExp);
         // const length = filteredData.length
@@ -53,7 +44,6 @@ class App extends Component {
         this.setState({
             searchValue: value,
             filteredData,
-            // counterPosts: filteredData.length
          })
     }
 

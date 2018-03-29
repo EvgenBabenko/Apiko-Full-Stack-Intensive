@@ -14,6 +14,8 @@ export default function PostList({ posts }) {
         />
     );
 
+    console.log(posts)
+
     return (
         <div className='post-list'>
             <h2>Loaded posts: ({counterPosts})</h2>
