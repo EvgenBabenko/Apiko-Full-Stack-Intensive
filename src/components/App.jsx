@@ -23,11 +23,8 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <PostList 
-                    posts={data.slice(0, this.state.counterPosts)}
-                    {...this.state}
-                />
-                <MoreButton onClickButton={this.getMorePosts}/>
+                <PostList posts={data.slice(0, this.state.counterPosts)} />
+                <MoreButton onClickButton={this.getMorePosts} />
             </React.Fragment>
         )
     }

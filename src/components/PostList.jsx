@@ -2,7 +2,7 @@ import React from 'react'
 
 import PostListItem from './PostListItem'
 
-export default function PostList({ posts, counterPosts }) {
+export default function PostList({ posts }) {
     const postElement = posts.map(post =>
         <PostListItem
             key={post.id}
@@ -14,7 +14,7 @@ export default function PostList({ posts, counterPosts }) {
 
     return (
         <div className='post-list'>
-            <h2>Loaded posts: ({counterPosts})</h2>
+            <h2>Loaded posts: ({posts.length})</h2>
             {postElement}
         </div>
     )
