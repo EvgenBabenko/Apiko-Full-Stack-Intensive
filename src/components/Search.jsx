@@ -3,10 +3,8 @@ import React from 'react'
 import styled from "styled-components";
 
 const Input = styled.input`
-    display: block;
-
-    padding: 15px;
-    margin: 0 auto;
+    padding: 10px;
+    border-color: blue;
 `
 
 export default function Search({ onChangeSearch, searchValue }) {
@@ -15,7 +13,7 @@ export default function Search({ onChangeSearch, searchValue }) {
             onChange={onChangeSearch}
             value={searchValue}
             type="text"
-            placeholder='Search...'
+            placeholder='Search post...'
         />
     )
 }

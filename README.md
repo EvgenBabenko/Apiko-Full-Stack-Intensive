@@ -1,5 +1,5 @@
 # Apiko-Full-Stack-Intensive
-## `Lesson 4 - React. Forms`
+## ` Lesson 5 - React. Component Lifecycle`
 
 ## `Instruction`
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -19,7 +19,7 @@ Builds the app for production to the build folder.
 To show the app for production, run static server, should be installed serve `npm install -g serve`
 
 ## `Technical requirements`
-* Create “search” input conponent
-* Filter posts data by “title” accourding to entered text
-* PostList should show matched elements
-* In case when no items found you should show “No items found” message (Make component for this one)
+* Rewrite you Post list using componentDidMount with fetch
+* Add loader
+* Set interval for fetching your list
+* Prevent render for list item components
