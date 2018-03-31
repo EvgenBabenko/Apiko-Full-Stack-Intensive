@@ -9,13 +9,10 @@ const Input = styled.input`
     margin: 0 auto;
 `
 
-export default function Search({ onChangeSearch, searchValue }) {
-    return (
-        <Input
-            onChange={onChangeSearch}
-            value={searchValue}
-            type="text"
-            placeholder='Search...'
-        />
-    )
-}
+export default ({ onChangeSearch, searchValue }) => 
+    <Input
+        onChange={onChangeSearch}
+        value={searchValue}
+        type="text"
+        placeholder='Search...'
+    />

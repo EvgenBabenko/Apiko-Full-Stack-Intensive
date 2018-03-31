@@ -1,26 +1,69 @@
-import React from 'react'
+import React, { Component } from 'react'
+
+import data from '../data.json'
 
 import PostListItem from './PostListItem'
+import MoreButton from './MoreButton'
+import Search from './Search'
 import NoItems from './NoItems'
 
-export default function PostList({ posts }) {
-    const counterPosts = posts.length;
-    const postElement = posts.map(post =>
-        <PostListItem
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            body={post.body}
-        />
-    );
+class PostList extends Component {
+    state = {
+        data: data,
+        postsToShow: PostList.stepPost,
+        filteredData: data,
+        searchValue: '',
+    }
 
-    console.log(posts)
+    getMorePosts = () => {
+        const { postsToShow, filteredData } = this.state;
 
-    return (
-        <div className='post-list'>
-            <h2>Loaded posts: ({counterPosts})</h2>
-            {counterPosts === 0 ? <NoItems /> : postElement}
-        </div>
-    )
-        
+        if (postsToShow >= filteredData.length) return;
+
+        this.setState({
+            postsToShow: postsToShow + PostList.stepPost,
+        })
+    }
+
+    changeSearch = ({ target: { value } } ) => {
+        const regExp = new RegExp(value, 'gi')
+        let filteredData = this.state.data.filter(item => regExp.test(item.title))
+
+        if (!filteredData) filteredData = this.state.data;
+
+        this.setState({
+            searchValue: value,
+            filteredData,
+        })
+    }
+
+    render() {
+        const postElement = this.state.filteredData
+            .slice(0, this.state.postsToShow)
+            .map(post =>
+                <PostListItem
+                    key={post.id}
+                    id={post.id}
+                    title={post.title}
+                    body={post.body}
+                />
+            );
+
+        const counterPosts = postElement.length;
+
+        return (
+            <React.Fragment>
+                <Search onChangeSearch={this.changeSearch} {...this.state} />
+                <div className='post-list'>
+                    <h2>Showed posts: ({counterPosts})</h2>
+                    {counterPosts === 0 ? <NoItems /> : postElement}
+                </div>
+                <MoreButton onClickButton={this.getMorePosts}/>
+            </React.Fragment>
+        )
+    }
 }
+
+PostList.stepPost = 10;
+
+export default PostList;
