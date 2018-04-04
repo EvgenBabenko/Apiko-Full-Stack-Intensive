@@ -7,13 +7,10 @@ const Input = styled.input`
     border-color: blue;
 `
 
-export default function Search({ onChangeSearch, searchValue }) {
-    return (
-        <Input
-            onChange={onChangeSearch}
-            value={searchValue}
-            type="text"
-            placeholder='Search post...'
-        />
-    )
-}
+export default ({ onChangeSearch, searchValue }) => 
+    <Input
+        onChange={onChangeSearch}
+        value={searchValue}
+        type="text"
+        placeholder='Search post...'
+    />

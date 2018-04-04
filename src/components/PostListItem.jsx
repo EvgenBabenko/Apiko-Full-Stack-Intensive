@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 
-export default function PostListItem({ id, title, body }) {
-    return (
-        <div id={id} className='post-item'>
-            <h3>{title}</h3>
-            <p>{body}</p>
-        </div>
-    )
+export default class PostListItem extends PureComponent {
+    render() {
+        const { id, title, body, index } = this.props;
+
+        return(
+            <div id={id} className='post-item'>
+                <h3>{index}. {title}</h3>
+                <p>{body}</p>
+            </div>
+        )
+    }
 }
