@@ -9,4 +9,4 @@ Draw relations
 
 ![alt text][logo]
 
-[logo]: https://github.com/EvgenBabenko/Apiko-Full-Stack-Intensive/blob/lesson-5/homeTask.jpg "Home task"
+[logo]: https://github.com/EvgenBabenko/Apiko-Full-Stack-Intensive/blob/lesson-10/homeTask.jpg "Home task"
