@@ -1,0 +1,21 @@
+{
+  "name": "weather",
+  "version": "0.0.0",
+  "description": "NodeJS weather client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js Dnipro"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "node-fetch": "^2.1.2",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
