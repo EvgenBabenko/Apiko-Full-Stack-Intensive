@@ -1,0 +1,13 @@
+{
+  "name": "lesson-14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db": "C:\\Program\\Files\\MongoDB\\Server\\3.6\\bin\\mongod.exe --dbpath d:/data/db --port 3001"
+  },
+  "license": "ISC"
+}
