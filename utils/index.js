@@ -6,7 +6,15 @@ const fetchData = async url => {
     return responce.json();
 }
 
-const joinToString = object => Object.values(object).join();
+const joinToString = object => {
+    let string = '';
+
+    for (const key in object) {
+        string += `${key}:${object[key]}, `
+    }
+
+    return string;
+};
 
 const toQueryString = params => params.join('&');
 

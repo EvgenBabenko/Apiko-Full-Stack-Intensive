@@ -1,13 +1,14 @@
 const fs = require('fs');
+const { joinToString } = require('../utils');
 
-exports.loggingData = (url, data) => {
-    fs.appendFile(url, `${data} \r\n`, err => {
+const loggingData = (url, data) => {
+    const dataToLog = joinToString(data);
+    
+    fs.appendFile(url, `${dataToLog} \r\n`, err => {
         if(err) console.log('something wrong: ', err);
 
         console.log(`data logged to ${url}`)
     })
 }
 
-// module.exports = {
-//     loggingData
-// }
+module.exports = loggingData;

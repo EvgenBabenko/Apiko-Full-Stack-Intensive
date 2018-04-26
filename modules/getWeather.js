@@ -15,10 +15,8 @@ const getWeather = async (apiKey, lat, lng) => {
 
         return currentlyWeather;
     } catch(error) {
-        console.log(error);
+        throw new Error(`Не удалось получить погоду`)
     }
 }
 
-module.exports = {
-    getWeather,
-}
+module.exports = getWeather;
