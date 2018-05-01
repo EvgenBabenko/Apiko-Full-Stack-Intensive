@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ObjectId = mongoose.SchemaTypes.ObjectId;
-
-const QuestionSchema = new mongoose.Schema({
-    title: String,
+const QuestionSchema = new Schema({
+    title: { type: String, required: true },
     description: String,
     tags: [String],
     createdAt: { type: Date, default: new Date() },
-    createdById: ObjectId,
+    createdById: { type: Schema.Types.ObjectId, ref: 'User' },
 })
 
 module.exports = QuestionSchema;

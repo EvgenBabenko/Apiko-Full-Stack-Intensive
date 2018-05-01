@@ -1,0 +1,1 @@
+module.exports = ServicesSchema = require('./schema');

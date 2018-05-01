@@ -1,18 +1,10 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ObjectId = mongoose.SchemaTypes.ObjectId;
+const ProfileSchema = require('./profile');
+const ServicesSchema = require('./services');
 
-const userProfileSchema = {
-    fullname: { type: String, required: true, lowercase: true, trim: true },
-    post: String,
-}
-
-const userServicesSchema = {
-    password: { bcrypt: String },
-    google: { fullName: String, accessToken: String, refreshToken: String },
-}
-
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     email: { 
         type: String,
         required: true,
@@ -23,8 +15,8 @@ const UserSchema = new mongoose.Schema({
             message: '{VALUE} is not a valid email!'
         }
     },
-    profile: userProfileSchema,
-    services: userServicesSchema,
+    profile: ProfileSchema,
+    services: ServicesSchema,
 })
 
 module.exports = UserSchema;

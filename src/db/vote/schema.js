@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ObjectId = mongoose.SchemaTypes.ObjectId;
-
-const VoteSchema = new mongoose.Schema({
+const VoteSchema = new Schema({
     isPositive: Boolean,
     createdAt: { type: Date, default: new Date() },
-    answerId: ObjectId,
-    createdById: ObjectId,
+    answerId: { type: Schema.Types.ObjectId, ref: 'Answer' },
+    createdById: { type: Schema.Types.ObjectId, ref: 'User' },
 })
 
 module.exports = VoteSchema;
